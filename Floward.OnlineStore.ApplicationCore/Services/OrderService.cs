@@ -32,7 +32,7 @@ namespace Floward.OnlineStore.ApplicationCore.Services
         {
             var existingOrder = await _unitOfWork.OrderRepository.FirstOrDefaultAsync(c => c.OrderStatus == order.OrderStatus && c.ProductId == order.ProductId && c.UserId == order.UserId);
 
-            if (existingOrder != null) return;
+            if (existingOrder == null) return;
 
             if (existingOrder.Quantity > 1)
                 --existingOrder.Quantity;

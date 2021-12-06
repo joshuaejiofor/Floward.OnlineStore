@@ -15,7 +15,26 @@ namespace Floward.OnlineStore.Core.Models
 
         [JsonIgnore]
         public virtual User User { get; set; }
-        
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            var other = (Order)obj;
+
+            return Id == other.Id &&
+                UserId == other.UserId &&
+                ProductId == other.ProductId &&
+                OrderStatus == other.OrderStatus;
+        }
+                
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode() ^ UserId.GetHashCode();
+        }
+
 
     }
 }
