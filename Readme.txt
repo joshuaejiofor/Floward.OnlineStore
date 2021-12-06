@@ -8,7 +8,7 @@ Technology
 Questions
 ---------------------
 	1. Design the Microservice Architecture for the example (diagram that represent it)?
-		=> Solution Items / microservice architecture.png
+		=> ./microservice architecture.png
 	
 	2. Define the design pattern you are going to use?
 		=> Factory Pattern
